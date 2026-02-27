@@ -1,0 +1,84 @@
+<div class="app">
+  <!-- ☁️ Start popup (click once to dismiss) -->
+<div class="startPopup" id="startPopup" role="dialog" aria-modal="true">
+  <div class="cloudPopup">
+    <div class="cloudBg" aria-hidden="true"></div>
+    <div class="cloudText">오늘 당신이 알고싶은 흐름은 무엇인가요?</div>
+    <div class="cloudHint">•:•.•:•.•:•:•:•:•:•:•:•☾☼☽•:•.•:•.•:•:•:•:•:•:•:•</div>
+  </div>
+</div>
+  <canvas id="starCanvas" aria-hidden="true"></canvas>
+  <header class="top">
+    <div class="titleRow">
+      <div class="moon" aria-hidden="true"></div>
+      <div>
+        <h1>MOON MESSAGE</h1>
+        <p class="sub">한 장의 카드가 오늘의 흐름을 보여줘요. <span class="tiny">(for fun • self-reflection)</span></p>
+      </div>
+    </div>
+  </header>
+
+  <!-- TOPIC SELECT -->
+  <section class="panel" id="topicPanel">
+    <h2 class="panelTitle">✦ 주제를 선택하세요</h2>
+    <div class="topics" id="topics"></div>
+  </section>
+
+  <!-- CARD PICK -->
+  <section class="panel isHidden" id="cardPanel">
+    <div class="panelHead">
+      <div class="crumb">
+        <button class="linkBtn" id="backToTopics">← 주제 선택</button>
+        <span class="dotSep">•</span>
+        <span id="topicLabel"></span>
+      </div>
+      <div class="hint">끌리는 카드를 선택하세요 ✦</div>
+    </div>
+
+    <div class="cards" id="cards" aria-live="polite"></div>
+  </section>
+
+  <!-- RESULT -->
+  <section class="panel isHidden" id="resultPanel">
+    <div class="resultCard">
+      <div class="resultTop">
+        <div class="pill" id="resultTopicPill"></div>
+        <div class="sigil" id="resultSigil" aria-hidden="true"></div>
+      </div>
+
+      <h2 class="resultName" id="resultName"></h2>
+      <p class="resultText" id="resultText"></p>
+
+      <div class="actionBox">
+        <div class="actionTitle">오늘의 제안</div>
+        <div class="actionText" id="resultAction"></div>
+      </div>
+
+      <div class="tags" id="resultTags"></div>
+
+      <div class="actions">
+        <button class="btn ghost" id="againBtn">같은 주제로 다시 뽑기</button>
+        <button class="btn" id="changeTopicBtn">주제 바꾸기</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <small>⚠ Entertainment only. 결정은 언제나 당신에게 있어요.</small>
+  </footer>
+</div>
+
+<!-- ✨ Loading overlay -->
+<div class="overlay isHidden" id="overlay" aria-hidden="true">
+  <div class="sparkles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="loadingText">loading...</div>
+</div>
+
+<!-- 🎹 BGM (GitHub raw mp3) -->
+<audio id="bgm" loop preload="auto" crossorigin="anonymous">
+  <source src="https://raw.githubusercontent.com/HayleyJung/moon-bgm/main/juliush-ambient-piano-amp-pad-ambient-piano-music-1133.mp3" type="audio/mpeg">
+</audio>
